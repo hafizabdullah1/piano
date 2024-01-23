@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./img/pexels-¶project-atlas-1674049.jpg);
+            background-size: cover;
+        }
+
+        .main {
+            display: flex;
+            /* border: 2px solid red; */
+            width: 45%;
+            position: relative;
+            box-shadow: 0px 0px 16px 10px rgba(0, 255, 242, 0.699);
+        }
+
+        .key {
+            height: 100%;
+            width: 11.11%;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.26);
+            height: 50vh;
+            border-end-end-radius: 5px;
+            border-end-start-radius: 5px;
+            position: relative;
+        }
+
+        kbd {
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 10px rgb(0, 255, 242);
+            position: absolute;
+            left: 28px;
+            color: #999;
+            bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .black {
+            height: 30vh;
+            width: 7%;
+            background: #000;
+            border-end-end-radius: 5px;
+            border-end-start-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 20;
+        }
+
+        .black>kbd {
+            left: 1rem;
+            font-size: .7rem;
+            bottom: 12px;
+        }
+
+        .black:nth-child(1) {
+            left: 46px;
+        }
+
+        .black:nth-child(2) {
+            left: 115px;
+        }
+
+        .black:nth-child(3) {
+            left: 184px;
+        }
+
+        .black:nth-child(4) {
+            left: 390px;
+        }
+
+        .black:nth-child(5) {
+            left: 460px;
+        }
+
+        .black:nth-child(6) {
+            left: 529px;
+        }
+
+        .play {
+            transition: all 0.2s linear;
+            box-shadow: inset 0px -5px 1rem 0.2rem;
+        }
+
+        .parent>.play {
+            box-shadow: inset 0px -2px 0.7rem white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="parent">
+            <div class="black" data-key="88" id="all">
+                <kbd>x</kbd>
+            </div>
+            <div class="black" data-key="83" id="all">
+                <kbd>s</kbd>
+            </div>
+            <div class="black" data-key="69" id="all">
+                <kbd>e</kbd>
+            </div>
+            <div class="black" data-key="68" id="all">
+                <kbd>d</kbd>
+            </div>
+            <div class="black" data-key="70" id="all">
+                <kbd>f</kbd>
+            </div>
+            <div class="black" data-key="84" id="all">
+                <kbd>t</kbd>
+            </div>
+        </div>
+        <div class="key" data-key="71" id="all">
+            <kbd>g</kbd>
+        </div>
+        <div class="key" data-key="89" id="all">
+            <kbd>y</kbd>
+        </div>
+        <div class="key" data-key="72" id="all">
+            <kbd>h</kbd>
+        </div>
+        <div class="key" data-key="85" id="all">
+            <kbd>u</kbd>
+        </div>
+        <div class="key" data-key="74" id="all">
+            <kbd>j</kbd>
+        </div>
+        <div class="key" data-key="75" id="all">
+            <kbd>k</kbd>
+        </div>
+        <div class="key" data-key="79" id="all">
+            <kbd>o</kbd>
+        </div>
+        <div class="key" data-key="76" id="all">
+            <kbd>l</kbd>
+        </div>
+        <div class="key" data-key="80" id="all">
+            <kbd>p</kbd>
+        </div>
+    </div>
+
+    <audio data-key="88" src="http://carolinegabriel.com/demo/js-keyboard/sounds/041.wav"></audio>
+    <audio data-key="83" src="http://carolinegabriel.com/demo/js-keyboard/sounds/042.wav"></audio>
+    <audio data-key="69" src="http://carolinegabriel.com/demo/js-keyboard/sounds/043.wav"></audio>
+    <audio data-key="68" src="http://carolinegabriel.com/demo/js-keyboard/sounds/044.wav"></audio>
+    <audio data-key="70" src="http://carolinegabriel.com/demo/js-keyboard/sounds/045.wav"></audio>
+    <audio data-key="84" src="http://carolinegabriel.com/demo/js-keyboard/sounds/046.wav"></audio>
+    <audio data-key="71" src="http://carolinegabriel.com/demo/js-keyboard/sounds/047.wav"></audio>
+    <audio data-key="89" src="http://carolinegabriel.com/demo/js-keyboard/sounds/048.wav"></audio>
+    <audio data-key="72" src="http://carolinegabriel.com/demo/js-keyboard/sounds/049.wav"></audio>
+    <audio data-key="85" src="http://carolinegabriel.com/demo/js-keyboard/sounds/050.wav"></audio>
+    <audio data-key="74" src="http://carolinegabriel.com/demo/js-keyboard/sounds/051.wav"></audio>
+    <audio data-key="75" src="http://carolinegabriel.com/demo/js-keyboard/sounds/052.wav"></audio>
+    <audio data-key="79" src="http://carolinegabriel.com/demo/js-keyboard/sounds/053.wav"></audio>
+    <audio data-key="76" src="http://carolinegabriel.com/demo/js-keyboard/sounds/054.wav"></audio>
+    <audio data-key="80" src="http://carolinegabriel.com/demo/js-keyboard/sounds/055.wav"></audio>
+    <!-- <audio data-key="186" src="http://carolinegabriel.com/demo/js-keyboard/sounds/056.wav"></audio>     -->
+
+</body>
+<script>
+    window.addEventListener('keydown', (e) => {
+        let key = document.querySelector(`#all[data-key="${e.keyCode}"]`)
+        let blackKey = document.querySelector(`.black[data-key="${e.keyCode}"]`)
+        var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+
+
+        // console.log(key);
+        if (audio) {
+            audio.play()
+            audio.currentTime = 0
+            key.classList.add('play')
+            setTimeout(() => {
+                key.classList.remove('play')
+            }, 250)
+        }
+        return
+    })
+
+</script>
+
+</html>
